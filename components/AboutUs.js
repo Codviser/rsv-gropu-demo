@@ -7,7 +7,7 @@ export default function AboutUs () {
     <div className="container flex flex-col px-4 mx-auto mt-[100px]
     space-y-12 md:space-y-0 md:flex-row">
 <div className="flex flex-col space-y-12 md:w-1/2">
-<h2 className="max-w-md text-4xl font-bold text-center md:text-left text-cyan-300">
+<h2 className="max-w-md text-4xl font-bold text-center md:text-left text-blue-700">
 About Us
 </h2>
 <p className="max-w-sm text-center text-darkGrayishBlue md:text-left">
