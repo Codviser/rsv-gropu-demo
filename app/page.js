@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import { AboutUs, HeroSection, Navbar, Projects } from '@/components'
+
+import { AboutUs, HeroSection, Navbar, Projects, ServicesOffered } from '@/components'
 
 export default function Home() {
   return (
@@ -7,6 +7,7 @@ export default function Home() {
        <>
        {/* <Navbar /> */}
        <HeroSection />
+       <ServicesOffered />
        <AboutUs />
        <Projects />
        </>

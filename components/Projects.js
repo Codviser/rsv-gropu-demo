@@ -1,58 +1,49 @@
+"use client"
+
 import Image from "next/image";
 import Link from "next/link";
+import { urlForImage } from "@/sanity/lib/image";
+import { client } from "@/sanity/lib/client";
 
-export default function Projects() {
+export default async function Projects() {
+
+  const projects = await getProjects();
+
   return (
-    <>
-    <h1  className="max-w-md text-4xl font-bold text-center md:text-left text-blue-700 pt-20 ">Projects</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 space-x-10">
-        <div className="rounded-xl hover:scale-100">
-          <div className="p-8 flex flex-col">
-            <div className="rounded-xl overflow-hidden">
-              <Image src="/lab.jpg" width={650} height={300} />
-            </div>
-          </div>
-        </div>
-        <div className="rounded-xl">
+    <div className="ml-10 text-gray-700">
+    <h1  className="max-w-md text-4xl font-bold text-center md:text-left text-blue-700 mb-10 mt-20">Projects</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+      projects.map(project =>(
+        <Link href={`/project-details/${project.slug.current}`}>
+        <div key={project._id} className="rounded-xl">
           <div className="p-2 flex flex-col">
             <div className="rounded-xl overflow-hidden">
-              <Image src="/pic1.jpg" width={650} height={300} />
+            <img
+          src={urlForImage(project.image[0])}
+          alt={project.name}
+       className="rounded-xl overflow-hidden w-[450px] h-[300px] object-cover mb-5"
+        />
             </div>
+            <h3>{project.name}</h3>
+            <h5>{project?.location}</h5>
           </div>
         </div>
-        <div className="rounded-xl">
-          <div className="p-2 flex flex-col">
-            <div className="rounded-xl overflow-hidden">
-              <Image src="/pic2.jpg" width={650} height={300} />
-            </div>
-          </div>
-        </div>
-        <div className="rounded-xl">
-          <div className="p-2 flex flex-col">
-            <div className="rounded-xl overflow-hidden">
-              <Image src="/pic3.jpg" width={650} height={300} />
-            </div>
-          </div>
-        </div>
-
-        <div className="rounded-xl">
-          <div className="p-2 flex flex-col">
-            <div className="rounded-xl overflow-hidden">
-              <Image src="/pic4.jpg" width={650} height={300} />
-            </div>
-          </div>
-        </div>
-
-        <div className="rounded-xl">
-          <div className="p-2 flex flex-col">
-            <div className="rounded-xl overflow-hidden">
-              <Image src="/pic5.jpg" width={650} height={300} />
-            </div>
-          </div>
-        </div>
-       
-        <Link href='/' className=' p-2 px-4 pt-2 mb-10 text-white bg-cyan-900 rounded-xl text-center hover:bg-blue-700 mt-3 font-semibold'> View All Products</Link>
+        </Link>
+      ))
+      }
+        
+      
       </div>
-    </>
+     <div className="mt-10 mb-20">
+     <Link href='/allProjects' className=' p-2 px-4 pt-2 text-white bg-cyan-900 rounded-xl text-center hover:bg-blue-700  font-semibold' > View All Projects</Link>
+     </div>
+    </div>
   );
 }
+
+async function getProjects() {
+  const query = `*[_type == "project"][0...6]`;
+  const projects = await client.fetch(query);
+  return projects;
+  }
