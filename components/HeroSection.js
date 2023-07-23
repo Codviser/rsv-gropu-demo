@@ -35,9 +35,9 @@ baseline hover:bg-red-500'> Learn More</Link>
 <div className="md:w-1/2 object-cover">
 <Image
 alt="home pic"
-src='/excavation.jpg'
+src='/main.jpg'
 width={700}
-height={600}
+height={500}
 // objectFit="cover"
 className="rounded-xl"
 />

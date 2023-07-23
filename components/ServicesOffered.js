@@ -8,21 +8,24 @@ import { urlForImage } from '@/sanity/lib/image';
 import { client } from '@/sanity/lib/client';
 import { PortableText } from '@portabletext/react';
 
-export default function Services() {
-  const [services, setServices] = useState([]);
+export default async function Services() {
 
-  useEffect(() => {
-    async function fetchServices() {
-      try {
-        const result = await getServices();
-        setServices(result);
-      } catch (error) {
-        console.error('Error fetching services:', error);
-      }
-    }
+const services = await getServices()
 
-    fetchServices();
-  }, []);
+  // const [services, setServices] = useState([]);
+
+  // useEffect(() => {
+  //   async function fetchServices() {
+  //     try {
+  //       const result = await getServices();
+  //       setServices(result);
+  //     } catch (error) {
+  //       console.error('Error fetching services:', error);
+  //     }
+  //   }
+
+  //   fetchServices();
+  // }, []);
 
   return (
     <>

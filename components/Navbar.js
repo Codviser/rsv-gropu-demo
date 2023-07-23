@@ -6,14 +6,14 @@ export default function Navbar() {
     return (
       
          <>
-         <nav className='relative container mx-auto p-2'>
+         <nav className='relative container mx-auto '>
 <div className='flex items-center justify-between'>
 <Image 
 alt='logo'
 src='/rsv.png'
-width={150}
-height={62}
-className='pt-4 ml-6'
+width={90}
+height={52}
+className='ml-6'
 />
 <div className="hidden md:flex space-x-6 font-bold text-slate-900">
 <Link href='/' className='hover:text-blue-700'> Home</Link>
