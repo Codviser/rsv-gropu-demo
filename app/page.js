@@ -1,5 +1,5 @@
 import { client } from '@/sanity/lib/client';
-import { AboutUs, HeroSection, Navbar, Projects, ServicesOffered } from '@/components'
+import { AboutUs, HeroSection,  Projects, ServicesOffered } from '@/components'
 
 export default async function Home() {
 
