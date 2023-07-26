@@ -1,36 +1,16 @@
 "use client"
 
-
-
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { urlForImage } from '@/sanity/lib/image';
-import { client } from '@/sanity/lib/client';
-import { PortableText } from '@portabletext/react';
 
-export default async function Services() {
 
-const services = await getServices()
+export default function Services({aboutUs}) {
 
-  // const [services, setServices] = useState([]);
-
-  // useEffect(() => {
-  //   async function fetchServices() {
-  //     try {
-  //       const result = await getServices();
-  //       setServices(result);
-  //     } catch (error) {
-  //       console.error('Error fetching services:', error);
-  //     }
-  //   }
-
-  //   fetchServices();
-  // }, []);
 
   return (
     <>
      
-          {services.map((service) => (
+          {aboutUs.map((service) => (
             <div key={service._id} className="rounded-xl shadow-l">
              
 <div
@@ -52,7 +32,7 @@ className=" ml-5 container gap-10 flex flex-col px-4 mx-auto mt-[100px]  md:spac
 </div>
 
 <div className="flex flex-col space-y-1 md:w-1/2">
-  <h1 className="mb-12 max-w-md text-4xl font-bold text-center md:text-left text-blue-700">
+  <h1 className="mb-12 max-w-md text-4xl font-bold text-center md:text-left text-cyan-900">
     About Us
   </h1>
   <h3 className="max-w-m text-2xl font-bold text-center md:text-left text-gray-700">
@@ -76,12 +56,7 @@ baseline hover:bg-red-500'> Learn More</Link>
   );
 }
 
-async function getServices() {
-    const query = '*[_type == "about"]';
-    const services = await client.fetch(query);
-    return services;
-  }
- 
+
 
 
 

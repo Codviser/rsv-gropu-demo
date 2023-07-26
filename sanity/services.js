@@ -37,6 +37,16 @@ export default {
       title: 'Description',
       type: 'string',
     },
+
+    {
+      name: 'images',
+      title: 'Images',
+      type: 'array',
+      of: [{type: 'image'}],
+      options: {
+        hotspot: true,
+      },
+    },
   
   ],
 }

@@ -7,8 +7,8 @@ export default function Footer() {
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
               <a href="https://flowbite.com/" class="flex items-center">
-                  <img src="/rsv_logo_white.png" class="h-[100px] mr-3" alt="rsv Logo" />
-                  <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">RSV GROUP</span>
+                  <img src="/rsv_white.svg" class="h-[150px] mr-3" alt="rsv Logo" />
+                  {/* <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span> */}
               </a>
           </div>
           <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">

@@ -15,8 +15,8 @@ return (
 <div className="container flex flex-col md:flex-row
 items-center px-6 mx-auto mt-4 space-y-0 md:space-y-0">
 <div className="flex flex-col mb-32 space-y-12 md:w-1/2">
-<h1 className="max-w-md text-4xl font-bold text-center md:text-5xl md:text-left text-blue-700">
-Welcome to RSV Group
+<h1 className="max-w-md text-4xl font-bold text-center md:text-5xl md:text-left text-cyan-900">
+Welcome to RSV Engineering Group LTD
 </h1>
 <p className="max-w-sw text-center text-darkGrayishBlue md:text-left">
 Material Testing, Civil Engineers, Construction and Geotechnical

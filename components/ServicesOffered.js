@@ -2,36 +2,20 @@
 
 
 
-import { useState, useEffect } from 'react';
+
 import Link from 'next/link';
 import { urlForImage } from '@/sanity/lib/image';
-import { client } from '@/sanity/lib/client';
-import { PortableText } from '@portabletext/react';
 
-export default async function Services() {
 
-const services = await getServices()
+export default function Services({services}) {
 
-  // const [services, setServices] = useState([]);
 
-  // useEffect(() => {
-  //   async function fetchServices() {
-  //     try {
-  //       const result = await getServices();
-  //       setServices(result);
-  //     } catch (error) {
-  //       console.error('Error fetching services:', error);
-  //     }
-  //   }
-
-  //   fetchServices();
-  // }, []);
 
   return (
     <>
-      <h2 className="justify-center md:justify-start text-blue-700 m-5 text-3xl font-extrabold">Our Services</h2>
+      <h2 className="justify-center md:justify-start text-cyan-900 m-5 text-3xl font-extrabold">Our Services</h2>
       <div className="flex items-center justify-center min-h-screen container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <div key={service._id} className="rounded-xl shadow-l">
               <div className="p-8 flex flex-col">
@@ -39,7 +23,7 @@ const services = await getServices()
                   <img
                     src={urlForImage(service.image)}
                     alt={service.name}
-                    className="rounded-xl overflow-hidden w-[450px] h-[300px] object-cover"
+                    className="rounded-xl overflow-hidden w-[500px] h-[300px] object-cover"
                   />
                 </div>
                 <h5 className="text-1xl md:text-2xl font-bold text-cyan-900 mt-3">{service.name}</h5>
@@ -58,9 +42,4 @@ const services = await getServices()
   );
 }
 
-async function getServices() {
-    const query = '*[_type == "services"]';
-    const services = await client.fetch(query);
-    return services;
-  }
- 
+

@@ -3,15 +3,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { urlForImage } from "@/sanity/lib/image";
-import { client } from "@/sanity/lib/client";
 
-export default async function Projects() {
 
-  const projects = await getProjects();
+export default function Projects({projects}) {
+
+
 
   return (
     <div className="ml-10 text-gray-700">
-    <h1  className="max-w-md text-4xl font-bold text-center md:text-left text-blue-700 mb-10 mt-20">Projects</h1>
+    <h1  className="max-w-md text-4xl font-bold text-center md:text-left text-cyan-900 mb-10 mt-20">Projects</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {
       projects.map(project =>(
@@ -25,7 +25,7 @@ export default async function Projects() {
        className="rounded-xl overflow-hidden w-[450px] h-[300px] object-cover mb-5"
         />
             </div>
-            <h3>{project.name}</h3>
+            <h3 className="font-bold">{project.name}</h3>
             <h5>{project?.location}</h5>
           </div>
         </div>
@@ -42,8 +42,3 @@ export default async function Projects() {
   );
 }
 
-async function getProjects() {
-  const query = `*[_type == "project"][0...6]`;
-  const projects = await client.fetch(query);
-  return projects;
-  }

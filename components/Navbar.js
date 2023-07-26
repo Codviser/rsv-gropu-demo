@@ -10,9 +10,9 @@ export default function Navbar() {
 <div className='flex items-center justify-between'>
 <Image 
 alt='logo'
-src='/rsv.png'
-width={90}
-height={52}
+src='/rsv.svg'
+width={240}
+height={100}
 className='ml-6'
 />
 <div className="hidden md:flex space-x-6 font-bold text-slate-900">

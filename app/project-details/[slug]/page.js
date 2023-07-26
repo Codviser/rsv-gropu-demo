@@ -1,29 +1,17 @@
 "use client"
 
-import { useState, useEffect } from 'react';
+
 import { client } from '@/sanity/lib/client';
 import { urlForImage } from '@/sanity/lib/image';
 import { PortableText } from '@portabletext/react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 
-export default function ProjectDetails({ params }) {
+export default async function ProjectDetails({ params }) {
   const { slug } = params;
-  const [project, setProject] = useState(null);
+  const project = await getProjects(slug);
 
-  useEffect(() => {
-    async function fetchProject() {
-      try {
-        const query = `*[_type == "project" && slug.current == '${slug}'][0]`;
-        const fetchedProject = await client.fetch(query);
-        setProject(fetchedProject);
-      } catch (error) {
-        console.error('Error fetching project:', error);
-      }
-    }
 
-    fetchProject();
-  }, [slug]);
 
   if (!project) {
     return <div>Loading...</div>;
@@ -32,7 +20,7 @@ export default function ProjectDetails({ params }) {
   const images = project.image.map((item) => urlForImage(item).url());
 
   return (
-    <div className="ml-20">
+    <div className="ml-10 items-center">
       <div key={project._id} className="rounded-xl">
         <div className="p-2 flex flex-col">
           <div className="rounded-xl overflow-hidden">
@@ -60,3 +48,11 @@ export default function ProjectDetails({ params }) {
     </div>
   );
 }
+
+async function getProjects(slug) {
+  const query = `*[_type == "project" && slug.current == '${slug}'][0]`;
+  const projects = await client.fetch(query);
+  return projects;
+  }
+
+
