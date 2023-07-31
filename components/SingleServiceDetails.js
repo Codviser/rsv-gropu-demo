@@ -6,7 +6,7 @@ import { urlForImage } from '@/sanity/lib/image';
 import { PortableText } from '@portabletext/react';
 
 
-export default async function ServiceDetails({ service }) {
+export default function ServiceDetails({ service }) {
 
 
 

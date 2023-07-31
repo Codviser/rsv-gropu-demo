@@ -1,13 +1,13 @@
 "use client"
 
 
-import { client } from '@/sanity/lib/client';
+
 import { urlForImage } from '@/sanity/lib/image';
 import { PortableText } from '@portabletext/react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 
-export default async function SingleProjectDetails({ project }) {
+export default  function SingleProjectDetails({ project }) {
  
 
   if (!project) {

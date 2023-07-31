@@ -6,13 +6,14 @@ export default async function Home() {
   const services = await getServices()
   const aboutUs = await getAbout()
   const projects = await getProjects();
+  const home = await getHome();
 
 
   return (
     
        <>
      
-       <HeroSection />
+       <HeroSection home={home} />
        <ServicesOffered services= {services} />
        <AboutUs aboutUs={aboutUs}/>
        <Projects projects={projects} />
@@ -39,3 +40,9 @@ async function getProjects() {
   const projects = await client.fetch(query);
   return projects;
   }
+
+  async function getHome() {
+    const query = `*[_type == "home"]`;
+    const home = await client.fetch(query);
+    return home;
+    }
