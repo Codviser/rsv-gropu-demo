@@ -1,9 +1,10 @@
-"use client"
+
 
 
 import { client } from '@/sanity/lib/client';
 import { urlForImage } from '@/sanity/lib/image';
 import { PortableText } from '@portabletext/react';
+import Image from 'next/image';
 
 
 export default function ServiceDetails({ service }) {
@@ -35,11 +36,15 @@ export default function ServiceDetails({ service }) {
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
   {service.images?.map((image) => (
     <div key={image._key} className="rounded-xl overflow-hidden">
-      <img
-        src={urlForImage(image)}
-        alt={service.name} // Replace 'service.name' with the appropriate alt text for each image
-        className="rounded-xl overflow-hidden w-[450px] h-[300px] object-cover mb-5"
+    <div className="rounded-xl overflow-hidden w-[450px] h-[300px] object-cover mb-5 relative">
+    <Image
+        src={urlForImage(image).url()}
+        alt={service.name} 
+        layout='fill'
+        objectFit='cover'
+        priority
       />
+    </div>
     </div>
   ))}
 </div>

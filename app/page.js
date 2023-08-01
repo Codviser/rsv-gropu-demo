@@ -24,7 +24,7 @@ export default async function Home() {
 
 
 async function getServices() {
-  const query = '*[_type == "services"]';
+  const query = '*[_type == "services"][0...6] | order(priority desc, _updatedAt desc) ';
   const services = await client.fetch(query);
   return services;
 }

@@ -4,7 +4,8 @@
 import { urlForImage } from '@/sanity/lib/image';
 import { PortableText } from '@portabletext/react';
 import Link from "next/link";
-
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Carousel } from 'react-responsive-carousel';
 
 
 export default  function HeroSection({home}) {
@@ -32,12 +33,20 @@ baseline hover:bg-red-500'> Learn More</Link>
 </div>
 
 <div className="md:w-1/2 object-cover ">
-<img
-alt="home pic"
-src={urlForImage(home.image)}
-
-className="rounded-xl"
-/>
+<Carousel 
+ className="my-carousel"
+ autoPlay={true} infiniteLoop={true} showStatus={false} stopOnHover={true} interval={5000} showThumbs={false}
+>
+{home.image.map((pic) => (
+      
+      <img
+        alt="home pic"
+        src={urlForImage(pic)}
+        className="rounded-xl"
+      />
+   
+  ))}
+</Carousel>
 </div>
 
 </div>

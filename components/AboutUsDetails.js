@@ -3,7 +3,7 @@
 
 import { urlForImage } from "@/sanity/lib/image";
 import { PortableText } from "@portabletext/react";
-import Link from "next/link";
+import Image from "next/image";
 
 export default function AboutUsDetails({ aboutUs }) {
   if (!aboutUs) {
@@ -26,17 +26,20 @@ export default function AboutUsDetails({ aboutUs }) {
       {aboutUs.map((about) => (
         <div
           key={about._id}
-          className="container ml-5 mb-5 px-4 mx-auto mt-[100px]  md:space-y-0 md:flex-row text-gray-700"
+          className="container  mb-5 px-4 mx-auto mt-[100px]  md:space-y-0 md:flex-row text-gray-700"
         >
           <h1 className="mb-12 max-w-md text-4xl font-bold text-center md:text-left text-blue-700">
             About Us
           </h1>
           <div className="rounded-xl overflow-hidden">
-            <img
-              src={urlForImage(about.image)}
-              alt={about.name} // Use `about.name` instead of `aboutUs.name`
-              className="rounded-xl overflow-hidden w-[60vw] h-[80vh] object-cover mb-5"
+            <div className="rounded-xl overflow-hidden w-full h-[300px] object-cover mb-5 relative md:h-[500px]">
+            <Image
+              src={urlForImage(about.image).url()}
+              alt={about.name} 
+              layout="fill"
+              objectFit="cover"
             />
+            </div>
           </div>
 
           <div className="w-[70vw] mt-20 leading-8">

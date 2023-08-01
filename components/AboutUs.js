@@ -1,7 +1,8 @@
-"use client"
+
 
 import Link from 'next/link';
 import { urlForImage } from '@/sanity/lib/image';
+import Image from 'next/image';
 
 
 export default function Services({aboutUs}) {
@@ -11,10 +12,10 @@ export default function Services({aboutUs}) {
     <>
      
           {aboutUs.map((service) => (
-            <div key={service._id} className="rounded-xl shadow-l">
+            <div key={service._id} className="rounded-xl">
              
 <div
-className=" ml-5 container gap-10 flex flex-col px-4 mx-auto mt-[100px]  md:space-y-0 md:flex-row"
+className="  container gap-10 flex flex-col px-4 mx-auto mt-[100px]  md:space-y-0 md:flex-row"
 >
 
 
@@ -23,11 +24,15 @@ className=" ml-5 container gap-10 flex flex-col px-4 mx-auto mt-[100px]  md:spac
   
 >
   <div className="rounded-xl overflow-hidden">
-    <img
-      src={urlForImage(service.image)}
+   <div   className="rounded-xl overflow-hidden  w-[450px] h-[300px] object-cover mb-5 relative">
+   <Image
+      src={urlForImage(service.image).url()}
       alt={service.name}
-      className="rounded-xl overflow-hidden h-[420px] object-cover mb-5"
+      layout="fill"
+      objectFit='cover'
+     
     />
+   </div>
   </div>
 </div>
 

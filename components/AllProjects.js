@@ -1,9 +1,9 @@
-"use client"
 
 
 import Link from "next/link";
 import { urlForImage } from "@/sanity/lib/image";
 import { client } from "@/sanity/lib/client";
+import Image from "next/image";
 
 export default function AllProjects({projects}) {
 
@@ -18,12 +18,15 @@ export default function AllProjects({projects}) {
         <Link href={`/project-details/${project.slug.current}`}>
         <div key={project._id} className="rounded-xl">
           <div className="p-2 flex flex-col">
-            <div className="rounded-xl overflow-hidden">
-            <img
-          src={urlForImage(project.image[0])}
+            <div className="rounded-xl overflow-hidden  relative">
+          <div  className="rounded-xl overflow-hidden w-[450px] h-[300px] object-cover mb-5 relative">
+          <Image
+          layout="fill"
+          src={urlForImage(project.image[0]).url()}
           alt={project.name}
-       className="rounded-xl overflow-hidden w-[450px] h-[300px] object-cover mb-5"
+      objectFit="cover"
         />
+          </div>
             </div>
             <h3>{project.name}</h3>
             <h5>{project?.location}</h5>

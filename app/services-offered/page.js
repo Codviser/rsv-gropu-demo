@@ -55,7 +55,7 @@ const services = await getServices()
 
 
 async function getServices() {
-  const query = `*[_type == "services"]`;
+  const query = `*[_type == "services"] | order(priority desc, _updatedAt desc)`;
   const services = await client.fetch(query);
   return services;
   }

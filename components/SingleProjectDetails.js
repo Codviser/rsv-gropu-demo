@@ -6,6 +6,7 @@ import { urlForImage } from '@/sanity/lib/image';
 import { PortableText } from '@portabletext/react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
+import Image from 'next/image';
 
 export default  function SingleProjectDetails({ project }) {
  
@@ -25,11 +26,14 @@ export default  function SingleProjectDetails({ project }) {
             className="my-carousel"
              autoPlay={true} infiniteLoop={true} showStatus={false} stopOnHover={true} interval={5000} showThumbs={false}>
               {images.map((url, i) => (
-                <img
-                className="overflow-hidden w-full h-[90vh] object-cover"
-                key={i} src={url} alt={`Image ${i}`
-             
-              } />
+              <div key={i} className="overflow-hidden w-full h-[90vh] object-cover relative">
+                  <Image
+                  priority
+                layout='fill'
+                 src={url} alt={`Image ${i}`} 
+                 objectFit='cover'
+                 />
+              </div>
               ))}
             </Carousel>
           </div>
