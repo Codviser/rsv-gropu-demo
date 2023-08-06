@@ -39,11 +39,13 @@ baseline hover:bg-red-500'> Learn More</Link>
 >
 {home.image.map((pic) => (
       
-      <img
+      
+        <img
         alt="home pic"
         src={urlForImage(pic)}
         className="rounded-xl"
       />
+      
    
   ))}
 </Carousel>

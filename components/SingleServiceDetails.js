@@ -20,7 +20,7 @@ export default function ServiceDetails({ service }) {
 
   return (
    
-      <div key={service._id} className="ml-8 mr-4">
+      <div key={service._id} className="ml-8 mr-4 mb-5">
           <h1 className="text-gray-700 mt-5 font-bold text-4xl">{service.name}</h1>
 
           <h5 className="text-gray-700 mt-5">{service?.location}</h5>
@@ -36,13 +36,13 @@ export default function ServiceDetails({ service }) {
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
   {service.images?.map((image) => (
     <div key={image._key} className="rounded-xl overflow-hidden">
-    <div className="rounded-xl overflow-hidden w-[450px] h-[300px] object-cover mb-5 relative">
+    <div className="rounded-xl overflow-hidden w-[450px] h-[300px] object-cover relative">
     <Image
         src={urlForImage(image).url()}
         alt={service.name} 
         layout='fill'
         objectFit='cover'
-        priority
+        
       />
     </div>
     </div>

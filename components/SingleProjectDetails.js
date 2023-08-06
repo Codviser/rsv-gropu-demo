@@ -18,15 +18,15 @@ export default  function SingleProjectDetails({ project }) {
   const images = project.image.map((item) => urlForImage(item).url());
 
   return (
-    <div className="ml-10 items-center">
+    <div className=" items-center">
       <div key={project._id} className="rounded-xl">
         <div className="p-2 flex flex-col">
           <div className="rounded-xl overflow-hidden">
             <Carousel
-            className="my-carousel"
+            className="my-carousel "
              autoPlay={true} infiniteLoop={true} showStatus={false} stopOnHover={true} interval={5000} showThumbs={false}>
               {images.map((url, i) => (
-              <div key={i} className="overflow-hidden w-full h-[90vh] object-cover relative">
+              <div key={i} className="rounded-xl overflow-hidden w-[500px] h-[300px] object-cover relative md:h-[60vh] md:w-full lg:h-[85vh]">
                   <Image
                   priority
                 layout='fill'

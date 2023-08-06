@@ -24,7 +24,7 @@ className="  container gap-10 flex flex-col px-4 mx-auto mt-[100px]  md:space-y-
   
 >
   <div className="rounded-xl overflow-hidden">
-   <div   className="rounded-xl overflow-hidden  w-[450px] h-[300px] object-cover mb-5 relative">
+   <div   className="rounded-xl overflow-hidden w-[500px] h-[300px] object-cover relative md:h-[350px]">
    <Image
       src={urlForImage(service.image).url()}
       alt={service.name}
@@ -37,7 +37,7 @@ className="  container gap-10 flex flex-col px-4 mx-auto mt-[100px]  md:space-y-
 </div>
 
 <div className="flex flex-col space-y-1 md:w-1/2">
-  <h1 className="mb-12 max-w-md text-4xl font-bold text-center md:text-left text-cyan-900">
+  <h1 className="mb-8 max-w-md text-4xl font-bold text-center md:text-left text-cyan-900">
     About Us
   </h1>
   <h3 className="max-w-m text-2xl font-bold text-center md:text-left text-gray-700">
