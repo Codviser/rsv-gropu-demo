@@ -6,6 +6,7 @@ import { PortableText } from '@portabletext/react';
 import Link from "next/link";
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
+import Image from 'next/image';
 
 
 export default  function HeroSection({home}) {
@@ -40,9 +41,11 @@ baseline hover:bg-red-500'> Learn More</Link>
 {home.image.map((pic) => (
       
       
-        <img
+        <Image
+       width={400}
+       height={500}
         alt="home pic"
-        src={urlForImage(pic)}
+        src={urlForImage(pic).url()}
         className="rounded-xl"
       />
       
