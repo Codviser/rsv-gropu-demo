@@ -1,5 +1,4 @@
-"use client"
-
+"use client";
 
 import { urlForImage } from "@/sanity/lib/image";
 import { PortableText } from "@portabletext/react";
@@ -9,7 +8,6 @@ export default function AboutUsDetails({ aboutUs }) {
   if (!aboutUs) {
     return <div>Loading...</div>;
   }
-
 
   const handleDownload = () => {
     // Replace "/profile.pdf" with the actual URL of the PDF file you want to download
@@ -33,12 +31,12 @@ export default function AboutUsDetails({ aboutUs }) {
           </h1>
           <div className="rounded-xl overflow-hidden">
             <div className="rounded-xl overflow-hidden w-full h-[300px] object-cover  relative md:h-[500px]">
-            <Image
-              src={urlForImage(about.image).url()}
-              alt={about.name} 
-              layout="fill"
-              objectFit="cover"
-            />
+              <Image
+                src={urlForImage(about.image).url()}
+                alt={about.name}
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
 
@@ -50,7 +48,7 @@ export default function AboutUsDetails({ aboutUs }) {
         </div>
       ))}
       <div className="mt-10 mb-20">
-      <button
+        <button
           type="button"
           className="p-2 px-4 pt-2 text-white bg-cyan-900 rounded-xl text-center hover:bg-blue-700 font-semibold ml-5"
           onClick={handleDownload}
