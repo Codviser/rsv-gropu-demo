@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import { Navbar, Footer } from "@/components";
 
 const inter = Inter({ subsets: ["latin"] });
-
+export const revalidate = 3600 
 export const metadata = {
   title: "Rsve group",
   description:
@@ -17,8 +17,10 @@ export default function RootLayout({ children }) {
         // <Navbar />
         // {children}
         // <Footer />
-    <div className="flex justify-center items-center h-screen bold-20 md:bold-32">
+    <div className="flex justify-center items-center h-screen ">
+    <p className="bold-20 md:bold-32">
     We are under maintainance, we will be back shortly
+    </p>
     </div>
       </body>
     </html>
