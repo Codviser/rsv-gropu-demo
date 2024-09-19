@@ -11,7 +11,7 @@ export default function AboutUsDetails({ aboutUs }) {
 
   const handleDownload = () => {
     // Replace "/profile.pdf" with the actual URL of the PDF file you want to download
-    const downloadUrl = "/profile.pdf";
+    const downloadUrl = "/rsv-profile.pdf";
     const link = document.createElement("a");
     link.href = downloadUrl;
     link.target = "_blank";
