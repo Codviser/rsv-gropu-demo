@@ -9,15 +9,15 @@ export default function AboutUsDetails({ aboutUs }) {
     return <div>Loading...</div>;
   }
 
-  const handleDownload = () => {
-    // Replace "/profile.pdf" with the actual URL of the PDF file you want to download
-    const downloadUrl = "/rsv-profile.pdf";
-    const link = document.createElement("a");
-    link.href = downloadUrl;
-    link.target = "_blank";
-    link.download = "Company_Profile.pdf"; // Specify the desired name for the downloaded file
-    link.click();
-  };
+  // const handleDownload = () => {
+  //   // Replace "/profile.pdf" with the actual URL of the PDF file you want to download
+  //   const downloadUrl = "/rsv-profile.pdf";
+  //   const link = document.createElement("a");
+  //   link.href = downloadUrl;
+  //   link.target = "_blank";
+  //   link.download = "Company_Profile.pdf"; // Specify the desired name for the downloaded file
+  //   link.click();
+  // };
 
   return (
     <>
@@ -48,13 +48,13 @@ export default function AboutUsDetails({ aboutUs }) {
         </div>
       ))}
       <div className="mt-10 mb-20">
-        <button
+        {/* <button
           type="button"
           className="p-2 px-4 pt-2 text-white bg-cyan-900 rounded-xl text-center hover:bg-blue-700 font-semibold ml-5"
           onClick={handleDownload}
         >
           Download Company Profile
-        </button>
+        </button> */}
       </div>
     </>
   );
