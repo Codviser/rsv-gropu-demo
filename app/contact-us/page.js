@@ -16,10 +16,11 @@ export default function ContactUs() {
           </h3>
           <ul className="m-3 pt-2">
             <li className="mt-2">Eng. Robert Tumwesige | Technical Director</li>
-            <li className="mt-2">Plot 1038, UCB Zone, Bukoto - Kampala</li>
+            <li className="mt-2">Plots;63454,63455,63456 Block 314 <br />Bukasa, Busiro County, Wakiso District</li>
+           
             <li className="mt-2">P.O. Box 10704, Kampala, Uganda</li>
             <li className="mt-2">Tel: +256 782943463</li>
-            <li className="mt-2">Email: rtumwesige@gmail.com</li>
+            <li className="mt-2">Email: rsv@rsvegroup.com</li>
           </ul>
 
           <h3 className="max-w-m text-1xl font-bold text-center md:text-2xl md:text-left text-gray-700 mt-20">
