@@ -11,8 +11,9 @@ export default function HeroSection({ home }) {
   return (
     <>
       <section>
-        {home.map((home) => (
+        {home.map((home, i) => (
           <div
+          key={i}
             className="container flex flex-col md:flex-row gap-4
 items-center  mx-auto mt-4 space-y-0 md:space-y-0"
           >

@@ -6,7 +6,7 @@ import { SingleServiceDetails } from '@/components';
 
 
 export default async function ServiceDetails({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
 const service = await getServices(slug)
 
 

@@ -45,4 +45,5 @@ async function getProjects() {
     const query = `*[_type == "home"]`;
     const home = await client.fetch(query);
     return home;
+      
     }

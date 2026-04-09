@@ -4,7 +4,7 @@ import { SingleProjectDetails } from '@/components';
 
 
 export default async function ProjectDetails({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   const project = await getProjects(slug)
 
   return (
